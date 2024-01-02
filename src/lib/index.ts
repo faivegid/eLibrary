@@ -1,1 +1,9 @@
-// place files you want to import through the `$lib` alias in this folder.
+import { goto } from '$app/navigation';
+
+export interface ValidationError {
+    validationMessage: string
+}
+
+export function redirectTo(route: string) {
+    goto(route);
+}
