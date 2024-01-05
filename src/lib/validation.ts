@@ -43,3 +43,18 @@ export function validateEmail(email: string): ValidationError {
 
     return error;
 }
+
+export const validateCode = (code: string): ValidationError => {
+    let error: ValidationError = { validationMessage: "" };
+
+    if (!code) {
+        error.validationMessage = "Code is required";
+    } else if (!isNaN(Number(code))) {
+        error.validationMessage = "invalid code";
+    }
+    else if (code.length < 6) {
+        error.validationMessage = "invalid code";
+    }
+
+    return error;
+}

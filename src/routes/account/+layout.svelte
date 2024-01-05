@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { redirectTo } from "$lib";
 	import Copyright from "../../shared/Copyright.svelte";
 	import WaterMarkLogo from "../../shared/WaterMarkLogo.svelte";
 	import { title } from "./title";
@@ -12,13 +13,13 @@
 <WaterMarkLogo>
 	<main>
 		<div class="container">
-			<div class="logo">
+			<button on:click={() => redirectTo("/")} class="logo">
 				<img
 					class="img-logo"
 					src="../black_logo.png"
 					alt="Martha Library logo"
 				/>
-			</div>
+			</button>
 
 			<div class="line-container">
 				<span class="line"></span>
@@ -55,6 +56,8 @@
 
 	.logo {
 		align-items: center;
+		border: none;
+		background: transparent;
 	}
 
 	.img-logo {
@@ -81,5 +84,9 @@
 	.text {
 		padding: 0 10px;
 		font-size: 16px;
+	}
+
+	.logo:hover {
+		transform: scale(1.1);
 	}
 </style>

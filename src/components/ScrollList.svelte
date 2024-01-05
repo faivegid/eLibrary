@@ -94,7 +94,6 @@
 		overflow-x: auto;
 		scroll-behavior: smooth;
 		background-color: transparent;
-		gap: 20px;
 	}
 
 	.box-container {
@@ -107,9 +106,9 @@
 
 	.box-items {
 		flex: 0 0 auto;
-		height: 100%;
-		padding: 20px;
 		box-sizing: border-box;
+		margin: 10px;
+		padding: 20px;
 	}
 
 	.scroll-btn {

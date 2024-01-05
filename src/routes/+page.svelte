@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { books } from "$lib/store";
 	import ScrollList from "./../components/ScrollList.svelte";
 	import Button from "./../shared/Button.svelte";
 	import Copyright from "../shared/Copyright.svelte";
@@ -11,43 +12,7 @@
 		console.log(e.detail);
 	};
 
-	let bookList: BookDetail[] = [
-		{
-			bookImg: "/books/sample_book_1.jpg",
-			bookTitle: "Journey to the west",
-			avgRating: 4.5,
-			author: "Shan Quing",
-			id: "one",
-		},
-		{
-			bookImg: "/books/sample_book_1.jpg",
-			bookTitle: "Journey to the west",
-			avgRating: 4.5,
-			author: "Shan Quing",
-			id: "two",
-		},
-		{
-			bookImg: "/books/sample_book_1.jpg",
-			bookTitle: "Journey to the west",
-			avgRating: 4.5,
-			author: "Shan Quing",
-			id: "three",
-		},
-		{
-			bookImg: "/books/sample_book_1.jpg",
-			bookTitle: "Journey to the west",
-			avgRating: 4.5,
-			author: "Shan Quing",
-			id: "four",
-		},
-		{
-			bookImg: "/books/sample_book_1.jpg",
-			bookTitle: "Journey to the west",
-			avgRating: 4.5,
-			author: "Shan Quing",
-			id: "five",
-		},
-	];
+	let bookList: BookDetail[] = books;
 </script>
 
 <main>
@@ -74,7 +39,7 @@
 			<ScrollList {bookList} />
 		</div>
 		<div class="bottom-btn">
-			<Button type="secondary" inverse={true}>Browse More</Button>
+			<Button type="secondary" on:click={() => redirectTo("/books")} inverse={true}>Browse More</Button>
 		</div>
 	</div>
 	<Footer />

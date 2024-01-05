@@ -38,6 +38,7 @@
 		border: 0.5px solid black;
 		text-align: center;
 		background-color: #fff;
+		margin: 0;
 	}
 
 	.focus {

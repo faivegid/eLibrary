@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { redirectTo } from "$lib";
 	import type { BookDetail } from "$lib/interface";
 	import Button from "../shared/Button.svelte";
 	import StarRating from "../shared/StarRating.svelte";
@@ -26,15 +27,22 @@
 	</div>
 
 	<div class="button">
-		<Button type="dark">View</Button>
+		<Button type="dark" on:click={() => redirectTo(`/books/${book.id}`)}
+			>View</Button
+		>
 	</div>
 </div>
 
 <style>
+	:root {
+		--image-width: 132px;
+		--image-height: 138px;
+	}
+
 	.card {
 		object-fit: contain;
 		background: #fff;
-		padding: 20px;
+		padding: 15px;
 		border-radius: 6px;
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 		display: flex;
@@ -48,8 +56,8 @@
 	}
 
 	.image-container {
-		width: 220px;
-		height: 230px;
+		width: var(--image-width);
+		height: var(--image-height);
 		overflow: hidden;
 		border-radius: 10px;
 		position: relative;
@@ -74,5 +82,10 @@
 		padding: 0;
 		margin: 0;
 		margin-top: 10px;
+	}
+
+	.title {
+		max-width: var(--image-width);
+		text-align: center;
 	}
 </style>

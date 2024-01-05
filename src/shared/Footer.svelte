@@ -30,6 +30,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
+		align-content: center;
 		margin-top: 20px;
 	}
 
