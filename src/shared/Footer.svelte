@@ -3,7 +3,7 @@
 
 <footer>
 	<div class="image">
-		<img src="black_logo.png" alt="" />
+		<img src="/black_logo.png" alt="" />
 	</div>
 	<div class="contact-list">
 		<ul>

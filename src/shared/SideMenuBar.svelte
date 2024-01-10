@@ -2,33 +2,41 @@
 	import { SideBarItems } from "$lib/enum";
 	import { redirectTo } from "$lib/index";
 
-	export let currentItem = SideBarItems.Dashboard;
-	let activeLink = true;
+	export let currentItem = SideBarItems.Home;
 </script>
 
 <section class="sidebar">
 	<div class="logo">
 		<button class="logo-btn" on:click={() => redirectTo("/")}
-			><img src="standalone_black.png" alt="" /></button
+			><img src="/standalone_black.png" alt="" /></button
 		>
 	</div>
 	<div class="menu">
 		<button
 			class="menu-items"
-			class:activeLink
+			class:currentItem={currentItem === SideBarItems.Home}
+			on:click={() => (currentItem = SideBarItems.Home)}
+		>
+			<i class="fa-solid fa-house"></i>
+		</button>
+		<button
+			class="menu-items"
 			class:currentItem={currentItem === SideBarItems.Dashboard}
+			on:click={() => (currentItem = SideBarItems.Dashboard)}
 		>
 			<i class="fa-solid fa-chart-simple"></i>
 		</button>
 		<button
 			class="menu-items"
 			class:currentItem={currentItem === SideBarItems.Favourites}
+			on:click={() => (currentItem = SideBarItems.Favourites)}
 		>
 			<i class="fa-solid fa-heart"></i>
 		</button>
 		<button
 			class="menu-items"
 			class:currentItem={currentItem === SideBarItems.Settings}
+			on:click={() => (currentItem = SideBarItems.Settings)}
 		>
 			<i class="fa-solid fa-gear"></i>
 		</button>
@@ -129,7 +137,7 @@
 		padding: 10px;
 	}
 
-	.activeLink {
+	.currentItem {
 		background: #aaa;
 		pointer-events: none;
 	}

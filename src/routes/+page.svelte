@@ -22,7 +22,7 @@
 				<SearchBox on:search={handleSearch} />
 			</div>
 			<div class="content">
-				<img class="white-logo" src="white_logo.png" alt="" />
+				<img class="white-logo" src="/white_logo.png" alt="" />
 			</div>
 			<div class="login-btn">
 				<Button
@@ -39,7 +39,11 @@
 			<ScrollList {bookList} />
 		</div>
 		<div class="bottom-btn">
-			<Button type="secondary" on:click={() => redirectTo("/books")} inverse={true}>Browse More</Button>
+			<Button
+				type="secondary"
+				on:click={() => redirectTo("/books")}
+				inverse={true}>Browse More</Button
+			>
 		</div>
 	</div>
 	<Footer />
@@ -57,7 +61,7 @@
 		width: 100%;
 		height: 70vh;
 		border: 1px solid black;
-		background-image: url("home_page.png");
+		background-image: url("/home_page.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;

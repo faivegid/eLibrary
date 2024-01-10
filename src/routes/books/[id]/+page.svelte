@@ -13,9 +13,15 @@
 	});
 </script>
 
-<section>
+<section class="section-container">
 	<BookDetails {book} />
 </section>
 
 <style>
+	.section-container {
+		width: 80%;
+		display: flex;
+		padding: 20px;
+		margin-top: 30px;
+	}
 </style>
