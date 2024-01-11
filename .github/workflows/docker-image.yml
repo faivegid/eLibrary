@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER}}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PWD}}          
+      run: |
+        docker build --rm -t faivegid/martha-library-ui:latest .
+        docker login --username=$DOCKER_USER --password=$DOCKER_PASSWORD
+        docker push faivegid/martha-library-ui:latest
