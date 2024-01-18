@@ -47,10 +47,16 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: flex-start;
 	}
 
 	li {
-		margin-bottom: 10px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	.icons {

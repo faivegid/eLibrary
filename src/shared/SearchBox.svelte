@@ -39,6 +39,9 @@
 		text-align: center;
 		background-color: #fff;
 		margin: 0;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
 	}
 
 	.focus {
@@ -69,5 +72,11 @@
 	i:hover,
 	i:focus {
 		font-size: 15px;
+	}
+
+	@media (max-width: 500px) {
+		input {
+			width: 120px;
+		}
 	}
 </style>

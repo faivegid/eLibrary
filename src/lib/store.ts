@@ -1,4 +1,4 @@
-import type { BookDetail } from "./interface";
+import type { BookDetail } from "./interfaces";
 
 export const books: BookDetail[] = [
     {

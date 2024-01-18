@@ -56,7 +56,7 @@
 	:root {
 		--sidebar-width: 50px;
 		--sidebare-padding: 10px;
-		--sidebar: 40px;
+		--sidebar: 60px;
 	}
 
 	.sidebar {
@@ -76,7 +76,7 @@
 	}
 
 	.content {
-		overflow-x: auto;
+		overflow-y: auto;
 		scroll-behavior: smooth;
 		padding: 20px;
 		margin-left: var(--sidebar);

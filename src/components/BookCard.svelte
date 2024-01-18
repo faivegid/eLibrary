@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { redirectTo } from "$lib";
-	import type { BookDetail } from "$lib/interface";
+	import type { BookDetail } from "$lib/interfaces";
 	import Button from "../shared/Button.svelte";
 	import StarRating from "../shared/StarRating.svelte";
 
@@ -43,6 +43,7 @@
 		object-fit: contain;
 		background: #fff;
 		padding: 15px;
+		margin: 15px;
 		border-radius: 6px;
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 		display: flex;

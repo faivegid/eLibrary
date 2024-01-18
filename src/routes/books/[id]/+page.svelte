@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BookDetail } from "$lib/interface";
+	import type { BookDetail } from "$lib/interfaces";
 	import { onMount } from "svelte";
 	import BookDetails from "../../../components/BookDetails.svelte";
 	import { books } from "$lib/store";

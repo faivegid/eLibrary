@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from "./../shared/Button.svelte";
-	import type { BookDetail } from "$lib/interface";
+	import type { BookDetail } from "$lib/interfaces";
 	import StarRating from "../shared/StarRating.svelte";
 	import Tooltip from "../shared/Tooltip.svelte";
 

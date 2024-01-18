@@ -1,12 +1,19 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import Button from "../../../shared/Button.svelte";
 	import Link from "../../../shared/Link.svelte";
-	import { validatePassword, validateEmail } from "$lib/validation";
 	import { title } from "../title";
+	import { applyAction, deserialize } from "$app/forms";
+	import { redirectTo } from "$lib";
+	import type { LoginData } from "$lib/interfaces";
+	import { validateEmail } from "$lib/validation";
+
+	export let data: LoginData = { isLogin: false };
+	export let form: any = {};
 
 	title.set("Login Form");
 	let fields = { email: "", password: "" };
-	let errors = { email: "", password: "" };
+	let errors = { email: "", password: "", message: "" };
 	let formIsValid = true;
 
 	const handleEmail = () => {
@@ -15,11 +22,15 @@
 	};
 
 	const handlePassword = () => {
-		var error = validatePassword(fields.password);
-		errors.password = error.validationMessage;
+		if (!fields.password) {
+			console.log(fields.password);
+			errors.password = "password is required";
+		} else {
+			errors.message = form.errorMessage;
+		}
 	};
 
-	const handleSubmit = (e: Event) => {
+	const handleSubmit = async (e: Event) => {
 		handleEmail();
 		handlePassword();
 
@@ -28,10 +39,17 @@
 		if (formIsValid) {
 		}
 	};
+
+	onMount(() => {
+		if (data.isLogin === true) {
+			redirectTo("/books");
+		} else {
+		}
+	});
 </script>
 
 <div class="form-container">
-	<form on:submit|preventDefault={handleSubmit}>
+	<form method="POST" action="login" on:submit|preventDefault={handleSubmit}>
 		<div class="form-field">
 			<label for="email">Email</label>
 			<input

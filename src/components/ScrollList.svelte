@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BookDetail } from "$lib/interface";
+	import type { BookDetail } from "$lib/interfaces";
 	import BookCard from "./BookCard.svelte";
 	import { onMount } from "svelte";
 

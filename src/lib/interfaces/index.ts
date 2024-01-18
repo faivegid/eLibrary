@@ -17,3 +17,7 @@ export interface BookDetail {
     bookImg: string,
     id: string
 }
+
+export interface LoginData {
+    isLogin: boolean
+};

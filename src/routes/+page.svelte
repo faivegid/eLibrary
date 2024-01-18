@@ -6,7 +6,7 @@
 	import SearchBox from "../shared/SearchBox.svelte";
 	import { redirectTo } from "$lib/index";
 	import Footer from "../shared/Footer.svelte";
-	import type { BookDetail } from "$lib/interface";
+	import type { BookDetail } from "$lib/interfaces";
 
 	const handleSearch = (e: CustomEvent) => {
 		console.log(e.detail);

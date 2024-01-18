@@ -11,7 +11,9 @@
 			<SearchBox />
 		</div>
 
-		<slot />
+		<div class="page-content">
+			<slot />
+		</div>
 
 		<div class="footer">
 			<Footer />
@@ -43,5 +45,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.page-content {
+		width: 100%;
 	}
 </style>
